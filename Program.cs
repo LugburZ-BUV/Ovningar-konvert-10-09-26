@@ -15,7 +15,10 @@
                 "\n Öv 1" +
                 "\n");
             Console.Write("Mata in temperaturen i Celsius: ");
+            // We convert the input to double (decimal)
             double tempIn = Convert.ToDouble(Console.ReadLine());
+            // We then use the formula to convert it to Fahrenheit
+            // Before printing the result
             double tempOut = tempIn * 9 / 5 + 32;
             Console.WriteLine($"Din temperatur i Fahrenheit: {tempOut}\n");
 
@@ -29,10 +32,12 @@
 
             Console.WriteLine("Öv 2" +
                 "\n");
+            // We use a while loop to repeat the instructions/input until we get the correct response
             while (true)
             {
                 Console.Write("Mata in ett heltal: ");
                 string inputHeltal = Console.ReadLine();
+                // If int.TryParse returns True we will print the result and break the loop
                 if (int.TryParse(inputHeltal, out int resultat))
                 {
                     Console.WriteLine($"{resultat} är ett heltal!" +
@@ -40,6 +45,7 @@
                     break;
                 }
                 else
+                // If it doesn't return True we will continue the loop until it returns True
                 {
                     Console.WriteLine($"{inputHeltal} är inte ett heltal." +
                         $"\nVänligen försök igen.\n");
@@ -54,14 +60,19 @@
             Console.WriteLine("Öv 3" +
                 "\n");
             Console.WriteLine("Tryck på enter för att kasta tärningen, tryck på valfri tangent för att avsluta: ");
+
+            // We use a while loop to allow the user to repeat the program
             while(true)
             {
+                // If the user presses enter we will generate a new random number from 1-6
+                // and print the result, and then continue the loop
                 if (Console.ReadKey(true).Key == ConsoleKey.Enter)
                 {
                     Random rnd = new Random();
                     Console.WriteLine($"Tärningen landade på: {rnd.Next(1, 6)}");
                     continue;
                 }
+                // If the user presses any other key we will break the loop and exit the program
                 else
                 {
                     Console.WriteLine("Programmet avslutas.");

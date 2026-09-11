@@ -69,7 +69,7 @@
                 if (Console.ReadKey(true).Key == ConsoleKey.Enter)
                 {
                     Random rnd = new Random();
-                    Console.WriteLine($"Tärningen landade på: {rnd.Next(1, 6)}");
+                    Console.WriteLine($"Tärningen landade på: {rnd.Next(1, 7)}");
                     continue;
                 }
                 // If the user presses any other key we will break the loop and exit the program
